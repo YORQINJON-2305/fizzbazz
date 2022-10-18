@@ -5,20 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FizzBuzz</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="container">
         <h2 class="mt-5 mb-3 text-success text-center">FizzBuzz</h2>
-        <form class="w-50 mx-auto" method="post">
-            <div class="d-flex align-items-center mb-5">
+        <form class="w-50 mx-auto  mb-4" method="post">
+            <div class="d-flex align-items-center">
                 <input class="user-message w-100 form-control me-3" type="number" required>
                 <button class="btn btn-success">Check</button>
             </div>
-            <div class="alert text-center">
-            </div>
         </form>
+        <div class="text-center text-danger js-alert mb-3"></div>
+        <ul class="row ms-0 me-0 d-flex align-items-center mb-0 justify-content-between list-unstyled">
+            <li class="col-12 mb-3 d-flex align-items-center rounded list-item text-bg-success js-fizzbuzz col-lg-3">
+                <h4 class="mb-0 me-1 fw-normal">FizzBuzz:</h4>
+                <span class="fizzbuzz-text item-text"></span>
+            </li>
+            <li class="col-12 mb-3 d-flex align-items-center rounded list-item text-bg-success js-fizz col-lg-3">
+                <h4 class="mb-0 me-1 fw-normal">Fizz:</h4>
+                <span class="fizz-text item-text"></span>
+            </li>
+            <li class="col-12 mb-3 d-flex align-items-center rounded list-item text-bg-success js-buzz col-lg-3">
+                <h4 class="mb-0 me-1 fw-normal">Buzz:</h4>
+                <span class="buzz-text item-text"></span>
+            </li>
+        </ul>
     </div>
 
     <script src="main.js"></script>

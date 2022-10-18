@@ -1,36 +1,47 @@
 var elForm = document.querySelector("form");
 var elInput = elForm.querySelector(".user-message");
-var elAlert = elForm.querySelector(".alert");
+var elFizzbuzzText = document.querySelector(".fizzbuzz-text");
+var elFizzText = document.querySelector(".fizz-text");
+var elBuzzText = document.querySelector(".buzz-text");
+var elAlertText = document.querySelector(".js-alert");
+
+
+var fizzBuzz = [];
+var fizz = [];
+var buzz = [];
 
 elForm.addEventListener("submit", function(evt){
     evt.preventDefault();
 
     var inputValue = Number(elInput.value);
 
+
     if(inputValue % 3 == 0 && inputValue % 5 == 0){
-        elAlert.textContent = "FizzBuzz";
-        elAlert.classList.remove("alert-warning");
-        elAlert.classList.remove("alert-success");
-        elAlert.classList.remove("alert-danger");
-        elAlert.classList.add("alert-primary");
+      fizzBuzz.push(inputValue);
+      fizz.push(inputValue);
+      buzz.push(inputValue);
+
+      elFizzbuzzText.textContent = fizzBuzz.join(",");
+      elFizzText.textContent = fizz.join(",");
+      elBuzzText.textContent = buzz.join(",");
+
+      elAlertText.textContent = "";
     } else if(inputValue % 3 == 0){
-        elAlert.textContent = "Fizz";
-        elAlert.classList.remove("alert-primary");
-        elAlert.classList.remove("alert-success");
-        elAlert.classList.remove("alert-danger");
-        elAlert.classList.add("alert-warning");
+      fizz.push(inputValue);
+
+      elFizzText.textContent = fizz.join(",");
+
+      elAlertText.textContent = "";
+
     } else if(inputValue % 5 == 0){
-        elAlert.textContent = "Buzz";
-        elAlert.classList.remove("alert-warning");
-        elAlert.classList.remove("alert-primary");
-        elAlert.classList.remove("alert-danger");
-        elAlert.classList.add("alert-success");
-    }   else{
-        elAlert.textContent = `"${inputValue}"  3ga ham 5 ga ham bo'linmaydi!`
-        elAlert.classList.remove("alert-success");
-        elAlert.classList.remove("alert-warning");
-        elAlert.classList.remove("alert-primary");
-        elAlert.classList.add("alert-danger");
+      buzz.push(inputValue);
+
+      elBuzzText.textContent = buzz.join(",");
+
+      elAlertText.textContent = "";
+    } else{
+        elAlertText.textContent = `${inputValue}, 3ga ham 5ga ham bo'linmaydi!`;
+        elAlertText.classList.add("alert-danger")
     }
 
     elInput.value = "";
